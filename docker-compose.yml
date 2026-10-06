@@ -1,0 +1,11 @@
+services:
+  tests:
+    build: .
+    image: cypress-e2e
+    init: true
+    ipc: host
+    environment:
+      - BASE_URL=${BASE_URL:-https://markolosic.github.io}
+    volumes:
+      - ./cypress/screenshots:/app/cypress/screenshots
+      - ./cypress/videos:/app/cypress/videos
