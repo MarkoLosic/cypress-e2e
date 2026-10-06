@@ -1,0 +1,17 @@
+{
+  "title": "Marko Lošić — QA Engineer · Test Automation",
+  "brandName": "Marko Lošić",
+  "email": "markolosic1993@gmail.com",
+  "phone": "+387 63 759 197",
+  "githubUrl": "https://github.com/MarkoLosic",
+  "navLinks": {
+    "en": ["About", "Skills", "AI", "Experience", "Education", "Blog", "Contact"],
+    "sr": ["O meni", "Vještine", "AI", "Iskustvo", "Obrazovanje", "Blog", "Kontakt"]
+  },
+  "heroHeading": {
+    "en": "I make software reliable before users ever see it.",
+    "sr": "Pravim softver pouzdanim prije nego ga korisnici vide."
+  },
+  "sections": ["about", "skills", "ai", "experience", "education", "contact"],
+  "tools": ["Playwright", "Cypress", "Maestro"]
+}
