@@ -1,0 +1,15 @@
+{
+  "title": "Blog — Marko Lošić",
+  "heading": {
+    "en": "Notes from the test bench.",
+    "sr": "Bilješke sa testerske klupe."
+  },
+  "searchPlaceholder": {
+    "en": "Search posts…",
+    "sr": "Pretraži članke…"
+  },
+  "noMatch": "No posts match your search.",
+  "copyLink": "Copy link",
+  "copied": "Copied ✓",
+  "latestPostsOnHome": 3
+}

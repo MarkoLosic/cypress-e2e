@@ -37,6 +37,14 @@ class HomePage extends BasePage {
     return this.section(id).find('h2');
   }
 
+  get latestPosts() {
+    return cy.get('#latest .post-card');
+  }
+
+  get allPostsButton() {
+    return cy.get('#blog .cta a[href="blog/"]');
+  }
+
   get contactList() {
     return cy.get('#contact .contact-list');
   }
