@@ -80,6 +80,16 @@ describe('markolosic.github.io — Blog list', () => {
     blogPage.visiblePostCards.should('have.length', posts.length);
   });
 
+  it('searches posts regardless of letter case', () => {
+    const term = posts[0].title.split(' ').slice(-2).join(' ');
+
+    blogPage.search(term.toUpperCase());
+    blogPage.postCard(posts[0].slug).should('be.visible');
+    blogPage.visiblePostCards.each(($card) => {
+      expect($card.attr('data-search')).to.contain(term.toLowerCase());
+    });
+  });
+
   it('shows an empty state when nothing matches the search', () => {
     blogPage.search('zzz-no-such-post-zzz');
     blogPage.visiblePostCards.should('have.length', 0);
