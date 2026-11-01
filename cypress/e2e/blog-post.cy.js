@@ -25,7 +25,16 @@ describe('markolosic.github.io — Blog post', () => {
 
   it('loads with the correct title and SEO meta data', () => {
     blogPostPage.verifyTitle(`${post.title} — Marko Lošić`);
-    cy.get('meta[name="description"]').should('have.attr', 'content', post.excerpt);
+    cy.get('meta[name="description"]')
+      .should('have.attr', 'content')
+      .then((description) => {
+        expect(description).to.contain(post.excerpt.slice(0, 100));
+        if (description.length < post.excerpt.length) {
+          expect(description).to.match(/…$/);
+        } else {
+          expect(description).to.eq(post.excerpt);
+        }
+      });
     cy.get('link[rel="canonical"]').should('have.attr', 'href', `${siteUrl}/blog/${post.slug}/`);
     cy.get('meta[property="og:type"]').should('have.attr', 'content', 'article');
     cy.get('meta[property="article:published_time"]').should('have.attr', 'content', post.date);
@@ -56,6 +65,8 @@ describe('markolosic.github.io — Blog post', () => {
   });
 
   it('opens external links safely in a new tab', () => {
+    blogPostPage.open('testing-feature-flags-targeting-and-default-bugs');
+    blogPostPage.externalLinks.should('have.length.greaterThan', 0);
     blogPostPage.externalLinks.each(($a) => {
       expect($a.attr('rel')).to.contain('noopener');
     });

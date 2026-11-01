@@ -6,9 +6,9 @@ End-to-end tests for [markolosic.github.io](https://markolosic.github.io) writte
 ## Structure
 
 ```
-cypress/pages/      Page objects (BasePage, HomePage, BlogPage, BlogPostPage)
+cypress/pages/      Page objects (BasePage, HomePage, BlogPage, BlogPostPage, CookieConsentPage)
 cypress/fixtures/   Expected content used by the assertions
-cypress/e2e/        Specs (home page, blog list, blog post)
+cypress/e2e/        Specs (home page, blog list, blog post, cookie consent)
 cypress/support/    Global hooks and commands
 .github/            GitHub Actions workflow (tests in Docker on every PR)
 Dockerfile          Test image based on cypress/included

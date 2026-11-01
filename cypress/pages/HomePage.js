@@ -77,7 +77,7 @@ class HomePage extends BasePage {
 
   verifyImageLoaded() {
     this.heroPhoto
-      .should('be.visible')
+      .should('have.attr', 'alt', 'Portrait of Marko Lošić')
       .and(($img) => expect($img[0].naturalWidth).to.be.greaterThan(0));
   }
 }
