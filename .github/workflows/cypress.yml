@@ -1,6 +1,9 @@
 name: Cypress Tests (Docker)
 
 on:
+  push:
+    branches:
+      - '**'
   pull_request:
   workflow_dispatch:
 
